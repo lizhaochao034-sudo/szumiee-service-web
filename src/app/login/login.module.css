@@ -1,0 +1,96 @@
+.page {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 24px 16px;
+  background: #f7f8fa;
+  color: #1c1b24;
+}
+
+.card {
+  width: min(100%, 430px);
+  padding: clamp(20px, 6vw, 28px);
+  background: #fff;
+  border: 1px solid #e6e6ee;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgb(34 29 70 / 7%);
+}
+
+.brand { margin: 0 0 8px; color: #5c5a6b; font-size: 14px; font-weight: 600; }
+.card h1 { margin: 0 0 4px; font-size: 22px; }
+.intro { margin: 0 0 20px; color: #5c5a6b; font-size: 14px; }
+.field { margin-bottom: 14px; }
+.field label { display: block; margin-bottom: 6px; color: #5c5a6b; font-size: 14px; }
+.field input {
+  width: 100%;
+  min-height: 44px;
+  padding: 9px 11px;
+  border: 1px solid #aaa8b9;
+  border-radius: 8px;
+  color: inherit;
+  background: #fff;
+  font: inherit;
+}
+.field input[aria-invalid='true'] { border-color: #b22121; }
+.field input::placeholder { color: #736f83; }
+.password { position: relative; }
+.password input { padding-right: 48px; }
+.toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #5c5a6b;
+  cursor: pointer;
+}
+.eye {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  border: 1.6px solid currentColor;
+  border-radius: 75% 20%;
+  transform: rotate(45deg);
+}
+.eye::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
+.eyeClosed::after {
+  content: '';
+  position: absolute;
+  inset-inline: -5px;
+  top: 50%;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  box-shadow: 0 -1px #fff;
+}
+.error { margin: 5px 0 0; color: #b22121; font-size: 13px; }
+.error[role='alert']:not(:empty) { margin-bottom: 9px; }
+.error:empty { margin: 0; }
+.submit {
+  width: 100%;
+  min-height: 44px;
+  border: 0;
+  border-radius: 8px;
+  background: #634fc8;
+  color: white;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+.submit:hover:not(:disabled) { background: #5142a3; }
+.submit:disabled { opacity: .75; cursor: wait; }
+.toggle:focus-visible, .submit:focus-visible, .field input:focus-visible {
+  outline: 2px solid #634fc8;
+  outline-offset: 2px;
+}
+.hint { margin: 12px 0 0; color: #5c5a6b; font-size: 13px; }
